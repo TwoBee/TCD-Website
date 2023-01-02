@@ -3505,6 +3505,10 @@ nuxi@3.0.0-rc.12:
   optionalDependencies:
     fsevents "~2.3.2"
 
+nuxt-cli@nuxt/cli:
+  version "0.0.1"
+  resolved "https://codeload.github.com/nuxt/cli/tar.gz/ae27148bdffa34736c68bd96cf42644d37f43487"
+
 nuxt@^3.0.0-rc.12:
   version "3.0.0-rc.12"
   resolved "https://registry.npmjs.org/nuxt/-/nuxt-3.0.0-rc.12.tgz"

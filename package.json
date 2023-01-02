@@ -3,6 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "start": "nuxt start",
     "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -29,6 +30,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.2",
     "@vueuse/core": "^9.4.0",
     "axios": "^0.27.2",
+    "nuxt-cli": "nuxt/cli",
     "vue-simple-drawer": "^1.0.6"
   }
 }
