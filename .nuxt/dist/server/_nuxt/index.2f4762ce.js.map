@@ -1,0 +1,1 @@
+{"version":3,"file":"index.2f4762ce.js","sources":["../../../../pages/index.vue"],"sourcesContent":["<script setup>\nconst story = await useAsyncStoryblok('home', { version: 'draft' })\n</script>\n\n<template>\n  <StoryblokComponent v-if=\"story\" :blok=\"story.content\" />\n</template>\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;AACA,UAAA;;;;;;;;;;;;;;;;;;;"}

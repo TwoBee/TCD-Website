@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "stackblitz": "npm install axios@^0.27.2 && npm run dev",
+    "setup-proxy": "brew install mkcert && mkcert -install && mkcert localhost && npm install -g local-ssl-proxy",
+    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
+  },
+  "stackblitz": {
+    "startCommand": "npm run stackblitz"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@nuxtjs/tailwindcss": "^6.1.1",
+    "@storyblok/nuxt": "^4.4.2",
+    "nuxt": "^3.0.0-rc.12",
+    "sass": "^1.56.0",
+    "sass-loader": "^13.1.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/vue-fontawesome": "^3.0.2",
+    "@vueuse/core": "^9.4.0",
+    "axios": "^0.27.2",
+    "vue-simple-drawer": "^1.0.6"
+  }
+}
