@@ -1,7 +1,7 @@
 <template>
     <nav class="mobile" v-if="mobileMenu">
         <img src="@/assets/img/logo.png" alt="" />
-        <div class="topbottombar" @click="toggleMobile">
+        <div class="topbottombar" :class="{active: mobileNav}" @click="toggleMobile">
             <div class="middlebar"></div>
         </div>
     </nav>
@@ -72,15 +72,15 @@
         transition: 0.5s;
     }
 
-    .topbottombar:hover:before {
+     .active.topbottombar::before{
         transform: translateY(12px) rotate(135deg);
     }
 
-    .topbottombar:hover:after {
+    .active.topbottombar::after{
         transform: translateY(-12px) rotate(-135deg);
     }
 
-    .topbottombar:hover .middlebar {
+    .topbottombar.active .middlebar {
         transform: scale(0);
     }
 
