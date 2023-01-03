@@ -1,21 +1,19 @@
 <template>
-    <nav class="mobile">
+    <nav class="mobile" v-if="mobileMenu">
         <img src="@/assets/img/logo.png" alt="" />
-        <div class="navigation">
-            <font-awesome-icon icon="fa-solid fa-bars" @click="toggleMobile" />
-            <div class="burgermenu" v-if="mobileMenu">
-                <div v-if="mobileNav" class="burgermenu_itemlist">
-                    <ul>
-                        <li>Test 1</li>
-                        <li>Test 2</li>
-                        <li>Test 3</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="topbottombar" @click="toggleMobile">
+            <div class="middlebar"></div>
         </div>
-
-
     </nav>
+    <Transition name="menu">
+        <div v-if="mobileNav" class="burgermenu_itemlist">
+            <ul>
+                <li>Test 1</li>
+                <li>Test 2</li>
+                <li>Test 3</li>
+            </ul>
+        </div>
+    </Transition>
 </template>
 
 <script setup>
@@ -28,6 +26,7 @@
     const { width, height } = useWindowSize()
 
     function toggleMobile() {
+        console.log(mobileNav.value);
         mobileNav.value = !mobileNav.value;
     }
 
@@ -49,39 +48,73 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 99999;
 
     img {
-        max-height: 100%;
-        max-width: 100%;
-        margin: 0;
+        height: calc(16vw - 10px);
     }
 
-    .navigation {
-        display: flex;
-        align-items: center;
-
-        .burgermenu {
-
-            &_itemlist {
-
-                position: absolute;
-                left: 0;
-                top: -95vh;
-                background: red;
-                height: 100vh;
-                width: 100vw;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                @include font-body-r;
-
-                li {
-
-                    &:hover {}
-                }
-            }
-        }
+    .topbottombar {
+        top: 50%;
+        left: 50%;
+        width: 50px;
     }
+
+    .topbottombar:before,
+    .topbottombar:after,
+    .topbottombar div {
+        background: $color-primary;
+        content: "";
+        display: block;
+        height: 6px;
+        border-radius: 3px;
+        margin: 7px 0;
+        transition: 0.5s;
+    }
+
+    .topbottombar:hover:before {
+        transform: translateY(12px) rotate(135deg);
+    }
+
+    .topbottombar:hover:after {
+        transform: translateY(-12px) rotate(-135deg);
+    }
+
+    .topbottombar:hover .middlebar {
+        transform: scale(0);
+    }
+
+}
+
+.burgermenu_itemlist {
+    position: fixed;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: -moz-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include font-body-r;
+
+    li{
+        padding: 1rem;
+    }
+}
+
+.menu-enter-from {
+    transform: translateX(200%);
+}
+
+.menu-leave-to {
+    transform: translateX(100%);
 }
 </style>
