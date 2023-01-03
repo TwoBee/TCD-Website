@@ -2,7 +2,6 @@
   <div v-editable="blok" class="">
     <Nav></Nav>
     <StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
-    <Footer></Footer>
   </div>
 </template>
 

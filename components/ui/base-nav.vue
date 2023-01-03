@@ -1,24 +1,21 @@
 <template>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="@/assets/img/logo.png" alt="">
-            </div>
-            <div class="navigation">
-                <div class="navbar"></div>
-                <font-awesome-icon icon="fa-solid fa-bars" @click="toggleMobile" />
-                <div class="burgermenu" v-show="mobileNav">
-                    <div v-show="mobileNav" class="burgermenu_itemlist">
-                        <ul>
-                            <li>Test 1</li>
-                            <li>Test 2</li>
-                            <li>Test 3</li>
-                        </ul>
-                    </div>
+    <nav class="mobile">
+        <img src="@/assets/img/logo.png" alt="" />
+        <div class="navigation">
+            <font-awesome-icon icon="fa-solid fa-bars" @click="toggleMobile" />
+            <div class="burgermenu" v-if="mobileMenu">
+                <div v-if="mobileNav" class="burgermenu_itemlist">
+                    <ul>
+                        <li>Test 1</li>
+                        <li>Test 2</li>
+                        <li>Test 3</li>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+
+
+    </nav>
 </template>
 
 <script setup>
@@ -35,45 +32,53 @@
     }
 
     const mobileMenu = computed(() => {
-        console.log(width.value);
         return width.value <= 750 ? true : false;
     })
 </script>
 
 <style scoped lang="scss">
-nav {
+.mobile {
+    position: fixed;
+    background: #eaeff5;
+    height: 16vw;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 8vw;
     display: flex;
-    padding: 0 1rem;
     justify-content: space-between;
+    align-items: center;
 
-    .logo {
-        width: 40px;
-        height: 40px;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
     .navigation {
-        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
 
         .burgermenu {
-            display: block;
-            position: fixed;
-            height: 100vh;
-            width: 400px;
-            left: 0;
-            background-color: $color_white;
 
             &_itemlist {
-                text-align: center;
-                padding: 1.2rem;
+
+                position: absolute;
+                left: 0;
+                top: -95vh;
+                background: red;
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 @include font-body-r;
 
                 li {
-                    text-decoration: none;
 
-                    &:hover {
-                        text-decoration: underline;
-                    }
+                    &:hover {}
                 }
             }
         }
