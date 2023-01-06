@@ -51,7 +51,7 @@ nav {
     display: flex;
     position: absolute;
     width: 100%;
-    height: 35vh;
+    height: 6.5rem;
     z-index: 99999;
     justify-content: space-between;
     align-items: center;
