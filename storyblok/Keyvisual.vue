@@ -4,7 +4,6 @@
     <div class="text__wrapper">
       <h2>{{ blok.headline }}</h2>
       <h3>{{ blok.subline }}</h3>
-      <h3>{{ blok.image.filename }}</h3>
     </div>
   </section>
 </template>
@@ -14,24 +13,29 @@
   const backImage = ref("url(" +
     props.blok.image.filename +
     ")");
+  const greyscale = props.blok.greyscale ? 'grayscale(1)':'grayscale(0)';
+  console.log(greyscale);
+  const filter = ref(greyscale);
 </script>
 
 <style scoped lang="scss">
-$color_white: red;
-
 .keyvisual {
   background-image: v-bind('backImage');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 8vw);
+  filter: v-bind('filter');
 
   .text__wrapper {
     position: absolute;
-    background-color: blue;
     min-height: 200px;
     min-width: 400px;
+    top: 60%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -43,16 +47,12 @@ img {
 }
 
 h2 {
-  position: absolute;
   color: $color_white;
-  padding: 1rem;
   @include font-headline-2;
 }
 
 h3 {
-  position: absolute;
   color: $color_white;
-  padding: 1rem;
   @include font-headline-3
 }
 </style>
