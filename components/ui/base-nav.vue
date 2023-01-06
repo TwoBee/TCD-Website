@@ -1,8 +1,20 @@
 <template>
     <nav class="mobile" v-if="mobileMenu">
         <img src="@/assets/img/logo.png" alt="" />
-        <div class="topbottombar" :class="{active: mobileNav}" @click="toggleMobile">
+        <div class="topbottombar"
+            :class="{ active: mobileNav }"
+            @click="toggleMobile">
             <div class="middlebar"></div>
+        </div>
+    </nav>
+    <nav v-if="!mobileMenu">
+        <img src="@/assets/img/logo.png" alt="">
+        <div class="navigation">
+            <ul>
+                <li>Test 1</li>
+                <li>Test 2</li>
+                <li>Test 3</li>
+            </ul>
         </div>
     </nav>
     <Transition name="menu">
@@ -26,7 +38,6 @@
     const { width, height } = useWindowSize()
 
     function toggleMobile() {
-        console.log(mobileNav.value);
         mobileNav.value = !mobileNav.value;
     }
 
@@ -36,19 +47,51 @@
 </script>
 
 <style scoped lang="scss">
+nav {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 35vh;
+    z-index: 99999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem 0 7rem;
+
+    .navigation {
+        margin: 0 4rem;
+        color: $color_white;
+
+        li {
+            margin: 0 3rem;
+            padding: 1rem 3rem;
+
+            &:nth-of-type(3) {
+                padding-right: 0;
+            }
+        }
+
+        ul {
+            display: flex;
+        }
+    }
+}
+
+img {
+    height: 100%;
+}
+
 .mobile {
     position: fixed;
     background: #eaeff5;
     height: 16vw;
-    width: 100%;
+
     right: 0;
     bottom: 0;
     left: 0;
     padding: 8vw;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99999;
+
 
     img {
         height: calc(16vw - 10px);
@@ -72,11 +115,11 @@
         transition: 0.5s;
     }
 
-     .active.topbottombar::before{
+    .active.topbottombar::before {
         transform: translateY(12px) rotate(135deg);
     }
 
-    .active.topbottombar::after{
+    .active.topbottombar::after {
         transform: translateY(-12px) rotate(-135deg);
     }
 
@@ -105,7 +148,7 @@
 
     @include font-body-r;
 
-    li{
+    li {
         padding: 1rem;
     }
 }
