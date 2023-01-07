@@ -2,6 +2,12 @@
     @return calc($val / 16) + 0rem;
 }
 
+@mixin font-headline-1 {
+    font-size: toRem(70);
+    font-weight: 500;
+    line-height: toRem(42);
+}
+
 @mixin font-headline-2 {
     font-size: toRem(42);
     font-weight: 500;
@@ -15,7 +21,13 @@
 }
 
 @mixin font-body-r {
-    font-size: toRem(22);
+    font-size: toRem(24);
     font-weight: normal;
+    line-height: toRem(32);
+}
+
+@mixin font-body-b {
+    font-size: toRem(24);
+    font-weight: bold;
     line-height: toRem(32);
 }
