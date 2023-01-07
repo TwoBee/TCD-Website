@@ -1,9 +1,7 @@
 <template>
     <nav class="mobile" v-if="mobileMenu">
         <img src="@/assets/img/logo.png" alt="" />
-        <div class="topbottombar"
-            :class="{ active: mobileNav }"
-            @click="toggleMobile">
+        <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
             <div class="middlebar"></div>
         </div>
     </nav>
@@ -11,18 +9,18 @@
         <img src="@/assets/img/logo.png" alt="">
         <div class="navigation">
             <ul>
-                <li>Test 1</li>
-                <li>Test 2</li>
-                <li>Test 3</li>
+                <li><a href="#">Test 1</a></li>
+                <li><a href="#">Test 2</a></li>
+                <li><a href="#">Test 3</a></li>
             </ul>
         </div>
     </nav>
     <Transition name="menu">
         <div v-if="mobileNav" class="burgermenu_itemlist">
             <ul>
-                <li>Test 1</li>
-                <li>Test 2</li>
-                <li>Test 3</li>
+                <li><a href="#">Test 1</a></li>
+                <li><a href="#">Test 2</a></li>
+                <li><a href="#">Test 3</a></li>
             </ul>
         </div>
     </Transition>
@@ -33,6 +31,7 @@
     import { useWindowSize } from '@vueuse/core';
 
     defineProps({ 'data': Array })
+    
 
     const mobileNav = ref(null)
     const { width, height } = useWindowSize()
@@ -62,8 +61,8 @@ nav {
         color: $color_white;
 
         li {
-            margin: 0 3rem;
-            padding: 1rem 3rem;
+            margin: 0 1.875rem;
+            padding: 1rem 2rem;
 
             &:nth-of-type(3) {
                 padding-right: 0;
