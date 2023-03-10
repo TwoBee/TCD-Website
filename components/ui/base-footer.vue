@@ -1,56 +1,53 @@
 <template>
     <section id="footer">
-    <nav>
-         <div>
-            <span>Copyright 2022</span>
-        </div>
-        <div>
-            <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
-        </div>
-        <div>
-            <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
-        </div>
-    </nav>
+        <nav>
+            <div>
+                <span class="copyright">Copyright 2022</span>
+            </div>
+            <div>
+                <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
+            </div>
+            <div>
+                <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
+            </div>
+        </nav>
     </section>
 </template>
 <script>
 
-export default {
-props: {'data':Array, 
-        'color-primary':{
-            type: String, 
-            required: false,
-            default: '#fff'}, 
-        'color-secondary':{
-            type: String, 
-            required: false, 
-            default: '#000'},},
-}
+    export default {
+        props: { 'data': Array },
+    }
 </script>
-<style scoped>
-    nav{
-        display: grid;
-        justify-content: space-around;
-        height: 4rem;
-        background-color: var(--color-primary);
-        color: var(--color-second);
-        margin: 0;
-        align-items: center;
-        grid-template-columns: repeat(3, 1fr);
-    }
-    nav>div{
+<style scoped lang="scss">
+nav{
+    display: none;
+}
+.copyright{
+    color: $color-secondary;
+}
+@include desktop {
+    nav {
         display: flex;
-        width: 50%;
-        padding: 0 4rem;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20% 2rem 20%;
+        
+
+        >div {
+            display: flex;
+            flex-direction: column;
+
+            &:first-of-type {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        a:any-link {
+            color: $color_grey_light;
+            padding: 1rem 0;
+        }
     }
-    nav>div:last-child{
-        justify-content: right;
-    }
-    a{
-        padding: 0 4rem;
-    }
-    a:any-link{
-        color: var(--color-white);
-    }
+}
 </style>

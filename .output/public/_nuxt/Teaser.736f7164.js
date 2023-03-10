@@ -1,0 +1,1 @@
+import{r as a,w as o,o as s,a as c,D as r,t as i}from"./entry.b72159b9.js";const l={class:"py-32 text-6xl text-[#50b0ae] font-bold text-center"},_={__name:"Teaser",props:{blok:Object},setup(e){return(n,d)=>{const t=a("editable");return o((s(),c("div",l,[r(i(e.blok.headline),1)])),[[t,e.blok]])}}};export{_ as default};
