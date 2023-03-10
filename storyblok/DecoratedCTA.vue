@@ -79,12 +79,12 @@
             }
 
             p {
-                @include font-body-r;
+                @include font-body-serif-r;
                 font-weight: lighter;
             }
 
             a {
-                @include font-body-b;
+                @include font-body-sans-b;
             }
         }
     }

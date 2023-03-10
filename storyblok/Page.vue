@@ -13,13 +13,19 @@
 	defineProps({ blok: Object })
 </script>
 <style lang="scss" scoped>
+* {
+	font-family: Fairplay, sans-serif;
+	;
+}
+
 section {
 	&:first-of-type {
 		padding-top: 0;
 
 		&:not(.keyvisual) {
 			padding-top: 10vh;
-			@include desktop{
+
+			@include desktop {
 				padding-top: 30vh;
 			}
 		}

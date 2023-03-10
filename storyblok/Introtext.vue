@@ -21,24 +21,19 @@
     }
 
     h1 {
-        @include font-headline-1;
+        @include font-headline-serif-1;
         font-weight: lighter;
         line-height: 4rem;
-
-        @include desktop {
-            @include font-headline-1;
-            font-weight: lighter;
-        }
     }
 
     div {
-        @include font-headline-3;
+        @include font-headline-serif-3;
 
         margin: 3rem 0
     }
 
     a {
-        @include font-body-b;
+        @include font-body-sans-b;
         color: $color-primary;
     }
 }

@@ -28,7 +28,7 @@ img {
 }
 
 h2 {
-  @include font-headline-2;
+  @include font-headline-serif-2;
   color: $color_white;
   max-width: 60%;
 
@@ -38,7 +38,9 @@ h2 {
 }
 
 h3 {
-  @include font-headline-3;
+  @include font-headline-sans-3;
+  font-size: 1.5rem;
+  line-height: 4rem;
   color: $color_white;
 }
 

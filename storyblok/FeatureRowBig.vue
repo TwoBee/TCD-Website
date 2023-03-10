@@ -71,6 +71,10 @@
                 transition: all .4s ease;
                 color: $color-accent;
 
+                h2 {
+                    line-height: 1.5rem;
+                }
+
                 @include desktop {
                     padding: 2rem;
                 }
@@ -92,12 +96,12 @@
             }
 
             h2 {
-                @include font-headline-3;
+                @include font-headline-serif-3;
                 font-size: 1rem;
             }
 
             h3 {
-                @include font-headline-2;
+                @include font-headline-serif-2;
 
             }
 
@@ -116,7 +120,7 @@
                 bottom: -5vh;
                 left: -5vw;
 
-                @include desktop{
+                @include desktop {
                     bottom: -15vh;
                 }
             }
@@ -132,7 +136,7 @@
             font-size: 3rem;
 
             h3 {
-                @include font-headline-3;
+                @include font-headline-serif-3;
                 font-size: 1rem;
             }
 

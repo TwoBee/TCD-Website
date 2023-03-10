@@ -50,7 +50,7 @@
         }
 
         a {
-            @include font-body-b;
+            @include font-body-sans-b;
             color: $color-accent;
 
             &:hover {
@@ -66,6 +66,7 @@
         font-size: 9rem;
         line-height: 9rem;
         color: $color_secondary_dark_reduced;
+        transform: translateX(0%) translateY(-15%);
     }
 }
 
@@ -93,7 +94,7 @@
             }
 
             h2 {
-                @include font-headline-2;
+                @include font-headline-serif-2;
             }
 
 
@@ -101,7 +102,7 @@
 
         &::after {
             font-size: 14rem;
-            line-height: 14rem;
+            line-height: 10rem;
         }
     }
 }

@@ -1,33 +1,84 @@
+@font-face {
+	font-family: Fairplay;
+	src: url("@/assets/fonts/FairDisplay/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+	font-family: Gotham;
+	src: url("@/assets/fonts/Gotham/Gotham-Light.otf");
+	src: url("@/assets/fonts/Gotham/GothamLight.ttf");
+}
+
 @function toRem($val) {
-    @return calc($val / 16) + 0rem;
+	@return calc($val / 16) + 0rem;
 }
 
-@mixin font-headline-1 {
-    font-size: toRem(70);
-    font-weight: 500;
-    line-height: toRem(42);
+@mixin font-headline-serif-1 {
+	font-family: Fairplay, sans-serif;
+	font-size: toRem(70);
+	font-weight: 500;
+	line-height: toRem(42);
 }
 
-@mixin font-headline-2 {
-    font-size: toRem(42);
-    font-weight: 500;
-    line-height: toRem(42);
+@mixin font-headline-sans-1 {
+	font-family: Gotham;
+	font-size: toRem(70);
+	font-weight: 500;
+	line-height: toRem(42);
 }
 
-@mixin font-headline-3 {
-    font-size: toRem(32);
-    font-weight: 300;
-    line-height: toRem(32);
+@mixin font-headline-serif-2 {
+	font-family: Fairplay, sans-serif;
+	font-size: toRem(42);
+	font-weight: 500;
+	line-height: toRem(42);
 }
 
-@mixin font-body-r {
-    font-size: toRem(24);
-    font-weight: normal;
-    line-height: toRem(32);
+@mixin font-headline-sans-2 {
+    font-family: Gotham;
+	font-size: toRem(42);
+	font-weight: 500;
+	line-height: toRem(42);
 }
 
-@mixin font-body-b {
-    font-size: toRem(24);
-    font-weight: bold;
-    line-height: toRem(32);
+@mixin font-headline-serif-3 {
+	font-family: Fairplay, sans-serif;
+	font-size: toRem(32);
+	font-weight: 300;
+	line-height: toRem(32);
+}
+
+@mixin font-headline-sans-3 {
+    font-family: Gotham;
+	font-size: toRem(32);
+	font-weight: 300;
+	line-height: toRem(32);
+}
+
+@mixin font-body-serif-r {
+	font-family: Fairplay, sans-serif;
+	font-size: toRem(20);
+	font-weight: normal;
+	line-height: toRem(32);
+}
+
+@mixin font-body-sans-r {
+    font-family: Gotham;
+	font-size: toRem(20);
+	font-weight: normal;
+	line-height: toRem(32);
+}
+
+@mixin font-body-serif-b {
+    font-family: Fairplay, sans-serif;
+	font-size: toRem(20);
+	font-weight: bold;
+	line-height: toRem(32);
+}
+
+@mixin font-body-sans-b {
+    font-family: Gotham;
+	font-size: toRem(20);
+	font-weight: bold;
+	line-height: toRem(32);
 }

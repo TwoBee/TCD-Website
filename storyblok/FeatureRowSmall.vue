@@ -70,8 +70,12 @@
                 transition: all .4s ease;
                 color: $color-accent;
 
+                h2{
+                    line-height: 1.5rem;
+                }
+
                 @include desktop{
-                    margin-left: -30vw;
+                    margin-left: -28vw;
                 }
             }
 
@@ -95,12 +99,12 @@
             }
 
             h2 {
-                @include font-headline-3;
+                @include font-headline-serif-3;
                 font-size: 1rem;
             }
 
             h3 {
-                @include font-headline-2;
+                @include font-headline-serif-2;
 
             }
 
@@ -119,7 +123,7 @@
             font-size: 3rem;
 
             h3 {
-                @include font-headline-3;
+                @include font-headline-serif-3;
                 font-size: 1rem;
             }
 

@@ -13,12 +13,12 @@
     padding: 5% 15% 5% 5%;
 }
 h2 {
-    @include font-headline-2;
+    @include font-headline-serif-2;
     font-weight: lighter;
     padding-bottom: 2rem;
 
     @include desktop {
-        @include font-headline-1;
+        @include font-headline-serif-1;
         font-weight: lighter;
     }
 }

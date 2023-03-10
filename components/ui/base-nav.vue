@@ -63,6 +63,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1% 1% 0 5%;
+    @include font-body-sans-r;
 
     @include desktop {
         justify-content: unset;
@@ -105,6 +106,7 @@ img {
     align-items: center;
     width: 100%;
     height: 10vh;
+    font-family: Gotham;
 
     img {
         height: calc(16vw - 10px);
@@ -158,9 +160,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
-    @include font-body-r;
 
     li {
         padding: 1rem;

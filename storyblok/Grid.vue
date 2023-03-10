@@ -36,7 +36,7 @@ section {
   }
 
   p {
-    @include font-headline-2;
+    @include font-headline-serif-2;
     text-align: center;
     padding: 2rem 0;
     background-color: $color-primary;
