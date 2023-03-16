@@ -393,8 +393,8 @@ function useHead(meta2) {
 const components = {
   Feature: defineAsyncComponent(() => import('./_nuxt/Feature.23de5287.mjs').then((c) => c.default || c)),
   Grid: defineAsyncComponent(() => import('./_nuxt/Grid.e1e05654.mjs').then((c) => c.default || c)),
-  Keyvisual: defineAsyncComponent(() => import('./_nuxt/Keyvisual.ae4a71ec.mjs').then((c) => c.default || c)),
-  Page: defineAsyncComponent(() => import('./_nuxt/Page.b79db836.mjs').then((c) => c.default || c)),
+  Keyvisual: defineAsyncComponent(() => import('./_nuxt/Keyvisual.e277d97c.mjs').then((c) => c.default || c)),
+  Page: defineAsyncComponent(() => import('./_nuxt/Page.341a21a0.mjs').then((c) => c.default || c)),
   Teaser: defineAsyncComponent(() => import('./_nuxt/Teaser.6f8a07b3.mjs').then((c) => c.default || c))
 };
 const _nuxt_components_plugin_mjs_KR1HBZs4kY = defineNuxtPlugin((nuxtApp) => {
@@ -1588,7 +1588,7 @@ const _routes = [
     meta: meta$8,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/club.2aa4b13a.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/club.2c9ceae8.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "contact",
@@ -1598,7 +1598,7 @@ const _routes = [
     meta: meta$7,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/contact.fbe2a65e.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/contact.3dca2646.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "events",
@@ -1608,7 +1608,7 @@ const _routes = [
     meta: meta$6,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/events.c3fc1af0.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/events.75107cf3.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "home",
@@ -1618,7 +1618,7 @@ const _routes = [
     meta: meta$5,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/home.d2cfe4e1.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/home.d938a22c.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "index",
@@ -1628,7 +1628,7 @@ const _routes = [
     meta: meta$4,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index.2f4762ce.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.9b9b2ba2.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "join-us",
@@ -1638,7 +1638,7 @@ const _routes = [
     meta: meta$3,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/join-us.a15373ae.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/join-us.b2514f1a.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "player",
@@ -1648,7 +1648,7 @@ const _routes = [
     meta: meta$2,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/player.da2703b5.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/player.dddfabf4.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "sub1-teams",
@@ -1658,7 +1658,7 @@ const _routes = [
     meta: meta$1,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/teams.6489f4af.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/teams.71ed5073.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "teams",
@@ -1668,7 +1668,7 @@ const _routes = [
     meta,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/teams.de114de6.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/teams.a22ce3f0.mjs').then((m2) => m2.default || m2)
   }
 ];
 const configRouterOptions = {};
@@ -1841,7 +1841,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.98661b7a.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.f11e7509.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

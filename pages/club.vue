@@ -1,11 +1,7 @@
-<template>
-    <h2>Club</h2>
-</template>
-<script>
-export default {
-
-}
+<script setup>
+const story = await useAsyncStoryblok('club', { version: 'draft' })
 </script>
-<style>
 
-</style>
+<template>
+  <StoryblokComponent v-if="story" :blok="story.content" />
+</template>

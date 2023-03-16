@@ -9,18 +9,26 @@
         <img src="@/assets/img/logo.png" alt="">
         <div class="navigation">
             <ul>
-                <li><a href="#">Test 1</a></li>
-                <li><a href="#">Test 2</a></li>
-                <li><a href="#">Test 3</a></li>
+                <li><a href="/players">Spieler</a></li>
+                <li><a href="/club">Der Verein</a></li>
+                <li><a href="/events">Termine</a></li>
+                <li><a href="/bookings">Platzreservierung</a></li>
+            </ul>
+            <ul>
+                <li><a class="become-member" href="/join-us">Mitglied werden</a></li>
             </ul>
         </div>
     </nav>
     <Transition name="menu">
         <div v-if="mobileNav" class="burgermenu_itemlist">
             <ul>
-                <li><a href="#">Test 1</a></li>
-                <li><a href="#">Test 2</a></li>
-                <li><a href="#">Test 3</a></li>
+                <li><a href="#">Spieler</a></li>
+                <li><a href="#">Der Verein</a></li>
+                <li><a href="#">Termine</a></li>
+                <li><a href="#">Platzreservierung</a></li>
+            </ul>
+            <ul>
+                <li class="become-member">Mitglied werden</li>
             </ul>
         </div>
     </Transition>
@@ -31,7 +39,7 @@
     import { useWindowSize } from '@vueuse/core';
 
     defineProps({ 'data': Array })
-    
+
 
     const mobileNav = ref(null)
     const { width, height } = useWindowSize()
@@ -54,23 +62,36 @@ nav {
     z-index: 99999;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 3rem 0 7rem;
+    padding: 1% 1% 0 5%;
+    @include font-body-sans-r;
+
+    @include desktop {
+        justify-content: unset;
+    }
 
     .navigation {
         margin: 0 4rem;
         color: $color_white;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
 
         li {
-            margin: 0 1.875rem;
             padding: 1rem 2rem;
-
-            &:nth-of-type(3) {
-                padding-right: 0;
-            }
         }
 
         ul {
             display: flex;
+
+            li>a {
+                width: fit-content;
+                display: block;
+
+                &.become-member {
+                    color: $color-secondary
+                }
+            }
         }
     }
 }
@@ -82,15 +103,13 @@ img {
 .mobile {
     position: fixed;
     background: #eaeff5;
-    height: 16vw;
-
-    right: 0;
     bottom: 0;
-    left: 0;
-    padding: 8vw;
+    padding: 1rem 2rem;
     justify-content: space-between;
     align-items: center;
-
+    width: 100%;
+    height: 10vh;
+    font-family: Gotham;
 
     img {
         height: calc(16vw - 10px);
@@ -145,10 +164,16 @@ img {
     justify-content: center;
     align-items: center;
 
-    @include font-body-r;
-
     li {
         padding: 1rem;
+
+        a {
+            color: $color-primary;
+        }
+
+        &:hover {
+            color: $color-secondary;
+        }
     }
 }
 

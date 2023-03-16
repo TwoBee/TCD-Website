@@ -13,7 +13,7 @@
   const backgroundImage = ref("url(" +
     props.blok.image.filename +
     ")");
-  const greyscale = props.blok.greyscale ? 'grayscale(1)' : 'grayscale(0)';
+  const greyscale = props.blok.greyscale ? 'grayscale(.5)' : 'grayscale(0)';
   const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
   const filter = ref(greyscale);
 
@@ -28,31 +28,50 @@ img {
 }
 
 h2 {
-  @include font-headline-2;
+  @include font-headline-serif-2;
   color: $color_white;
+  max-width: 60%;
+  margin: 1rem 0;
+
+  @include desktop {
+    max-width: unset;
+  }
 }
 
 h3 {
-  @include font-headline-3;
+  @include font-headline-sans-3;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   color: $color_white;
+
+  @include desktop {
+    line-height: 4rem;
+  }
 }
 
 .keyvisual {
-  background-image: v-bind('backgroundImage');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 212, 255, 0) 100%), v-bind('backgroundImage');
   background-position: v-bind('backgroundAlignment');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: calc(100vh - 8vw);
   filter: v-bind('filter');
+  height: 50vh;
+
+  @include desktop {
+    height: calc(100vh - 8vw);
+  }
 
   .text__wrapper {
     position: absolute;
-    min-width: 400px;
-    top: 60%;
+    top: 50%;
     left: 10%;
     display: flex;
     flex-direction: column;
+
+    @include desktop{
+      top: 60%;
+    }
   }
 }
 </style>

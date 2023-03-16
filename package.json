@@ -31,6 +31,7 @@
     "@vueuse/core": "^9.4.0",
     "axios": "^0.27.2",
     "nuxt-cli": "nuxt/cli",
+    "storyblok-js-client": "^5.2.5",
     "vue-simple-drawer": "^1.0.6"
   }
 }
