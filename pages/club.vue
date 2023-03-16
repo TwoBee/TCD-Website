@@ -1,7 +1,11 @@
-<script setup>
-const story = await useAsyncStoryblok('club', { version: 'draft' })
-</script>
-
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" />
+    <h2>Club</h2>
 </template>
+<script>
+export default {
+
+}
+</script>
+<style>
+
+</style>

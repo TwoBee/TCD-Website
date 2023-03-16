@@ -8,7 +8,7 @@ const client_manifest = {
   "node_modules/nuxt/dist/app/entry.mjs": {
     "resourceType": "script",
     "module": true,
-    "file": "entry.80c796ed.js",
+    "file": "entry.bc7be058.js",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -17,14 +17,14 @@ const client_manifest = {
     ],
     "css": []
   },
-  "entry.251fa212.css": {
-    "file": "entry.251fa212.css",
+  "entry.828943c8.css": {
+    "file": "entry.828943c8.css",
     "resourceType": "style"
   },
   "virtual:nuxt:/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/.nuxt/error-component.mjs": {
     "resourceType": "script",
     "module": true,
-    "file": "error-component.d92a2454.js",
+    "file": "error-component.7718e11d.js",
     "src": "virtual:nuxt:/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/.nuxt/error-component.mjs",
     "isDynamicEntry": true,
     "imports": [
@@ -38,7 +38,7 @@ const client_manifest = {
   "storyblok/Feature.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "Feature.2b65cad0.js",
+    "file": "Feature.54cc044b.js",
     "src": "storyblok/Feature.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -48,7 +48,7 @@ const client_manifest = {
   "storyblok/Grid.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "Grid.681dc464.js",
+    "file": "Grid.69e757b1.js",
     "src": "storyblok/Grid.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -58,7 +58,7 @@ const client_manifest = {
   "storyblok/Keyvisual.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "Keyvisual.1db9d629.js",
+    "file": "Keyvisual.21d1aaa0.js",
     "src": "storyblok/Keyvisual.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -73,21 +73,21 @@ const client_manifest = {
   "storyblok/Page.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "Page.425f7670.js",
+    "file": "Page.812b291c.js",
     "src": "storyblok/Page.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ],
     "css": [
-      "Page.8caf8309.css"
+      "Page.c8caf105.css"
     ],
     "assets": [
       "logo.781f9663.png"
     ]
   },
-  "Page.8caf8309.css": {
-    "file": "Page.8caf8309.css",
+  "Page.c8caf105.css": {
+    "file": "Page.c8caf105.css",
     "resourceType": "style"
   },
   "logo.781f9663.png": {
@@ -98,7 +98,7 @@ const client_manifest = {
   "storyblok/Teaser.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "Teaser.79603338.js",
+    "file": "Teaser.05bd1083.js",
     "src": "storyblok/Teaser.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -108,7 +108,7 @@ const client_manifest = {
   "pages/club.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "club.f741c363.js",
+    "file": "club.85c9d83a.js",
     "src": "pages/club.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -118,7 +118,7 @@ const client_manifest = {
   "pages/contact.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "contact.f409c4a8.js",
+    "file": "contact.15628d49.js",
     "src": "pages/contact.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -128,7 +128,7 @@ const client_manifest = {
   "pages/events.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "events.f9f03343.js",
+    "file": "events.8f01722b.js",
     "src": "pages/events.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -138,7 +138,7 @@ const client_manifest = {
   "pages/home.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "home.c1f60633.js",
+    "file": "home.f344082b.js",
     "src": "pages/home.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -148,18 +148,18 @@ const client_manifest = {
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.5926f4d7.js",
+    "file": "index.a0df441f.js",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_useAsyncStoryblok.2f68d916.js",
+      "_useAsyncStoryblok.7d717da4.js",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "_useAsyncStoryblok.2f68d916.js": {
+  "_useAsyncStoryblok.7d717da4.js": {
     "resourceType": "script",
     "module": true,
-    "file": "useAsyncStoryblok.2f68d916.js",
+    "file": "useAsyncStoryblok.7d717da4.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
@@ -167,7 +167,7 @@ const client_manifest = {
   "pages/join-us.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "join-us.1783aec7.js",
+    "file": "join-us.12b62837.js",
     "src": "pages/join-us.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -177,7 +177,7 @@ const client_manifest = {
   "pages/player.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "player.7b7d4c75.js",
+    "file": "player.f664f54d.js",
     "src": "pages/player.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -187,18 +187,18 @@ const client_manifest = {
   "pages/sub1/teams.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "teams.347d73fa.js",
+    "file": "teams.80e8f51f.js",
     "src": "pages/sub1/teams.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_useAsyncStoryblok.2f68d916.js",
+      "_useAsyncStoryblok.7d717da4.js",
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "pages/teams.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "teams.e376d6d2.js",
+    "file": "teams.31e4b9c6.js",
     "src": "pages/teams.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -208,7 +208,7 @@ const client_manifest = {
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "error-404.22e4b039.js",
+    "file": "error-404.ea9cf651.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -223,7 +223,7 @@ const client_manifest = {
   "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "error-500.946aa130.js",
+    "file": "error-500.c746340c.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -235,35 +235,35 @@ const client_manifest = {
     "file": "error-500.e60962de.css",
     "resourceType": "style"
   },
-  "storyblok/Page.css": {
+  "node_modules/nuxt/dist/app/entry.css": {
     "resourceType": "style",
-    "file": "Page.8caf8309.css",
-    "src": "storyblok/Page.css"
-  },
-  "storyblok/Keyvisual.css": {
-    "resourceType": "style",
-    "file": "Keyvisual.2c2bf315.css",
-    "src": "storyblok/Keyvisual.css"
+    "file": "entry.828943c8.css",
+    "src": "node_modules/nuxt/dist/app/entry.css"
   },
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
     "file": "error-404.18ced855.css",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.css"
   },
+  "storyblok/Page.css": {
+    "resourceType": "style",
+    "file": "Page.c8caf105.css",
+    "src": "storyblok/Page.css"
+  },
   "node_modules/@nuxt/ui-templates/dist/templates/error-500.css": {
     "resourceType": "style",
     "file": "error-500.e60962de.css",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.css"
   },
-  "node_modules/nuxt/dist/app/entry.css": {
+  "storyblok/Keyvisual.css": {
     "resourceType": "style",
-    "file": "entry.251fa212.css",
-    "src": "node_modules/nuxt/dist/app/entry.css"
+    "file": "Keyvisual.2c2bf315.css",
+    "src": "storyblok/Keyvisual.css"
   },
   "entryCSS": {
     "file": "",
     "css": [
-      "entry.251fa212.css"
+      "entry.828943c8.css"
     ]
   }
 };

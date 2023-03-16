@@ -10,6 +10,4 @@ $color_black: #3d3d3d;
 $color_blacker: #000;
 $color_white: #d6dbd4;
 $color_grey: #333;
-$color_grey_light: lighten($color_grey, 15);
 $color_grey_dark: darken($color_grey, 15);
-$color_secondary_dark_reduced: rgba($color_secondary_dark, 0.5);
