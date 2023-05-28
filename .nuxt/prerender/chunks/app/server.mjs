@@ -7,8 +7,8 @@ import { createError as createError$1, sendRedirect } from 'file:///Users/tobi/D
 import { defuFn } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/defu/dist/defu.mjs';
 import { resolveUnref } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/@vueuse/shared/index.mjs';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/vue-router/dist/vue-router.node.mjs';
-import { ssrRenderSuspense, ssrRenderComponent } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/vue/server-renderer/index.mjs';
 import q from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/axios/index.js';
+import { ssrRenderSuspense, ssrRenderComponent } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/vue/server-renderer/index.mjs';
 import { config, library } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/@fortawesome/fontawesome-svg-core/index.mjs';
 import { FontAwesomeIcon } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/@fortawesome/vue-fontawesome/index.js';
 import { fas } from 'file:///Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/node_modules/@fortawesome/free-solid-svg-icons/index.mjs';
@@ -387,11 +387,19 @@ function useHead(meta2) {
   useNuxtApp()._useHead(meta2);
 }
 const components = {
-  Feature: defineAsyncComponent(() => import('./_nuxt/Feature.23de5287.mjs').then((c) => c.default || c)),
-  Grid: defineAsyncComponent(() => import('./_nuxt/Grid.e1e05654.mjs').then((c) => c.default || c)),
-  Keyvisual: defineAsyncComponent(() => import('./_nuxt/Keyvisual.e277d97c.mjs').then((c) => c.default || c)),
-  Page: defineAsyncComponent(() => import('./_nuxt/Page.341a21a0.mjs').then((c) => c.default || c)),
-  Teaser: defineAsyncComponent(() => import('./_nuxt/Teaser.6f8a07b3.mjs').then((c) => c.default || c))
+  CallToAction: defineAsyncComponent(() => import('./_nuxt/CallToAction.ba95c2e0.mjs').then((c) => c.default || c)),
+  Contactform: defineAsyncComponent(() => import('./_nuxt/Contactform.f1194354.mjs').then((c) => c.default || c)),
+  DecoratedCTA: defineAsyncComponent(() => import('./_nuxt/DecoratedCTA.837a3c22.mjs').then((c) => c.default || c)),
+  FeatureRowBig: defineAsyncComponent(() => import('./_nuxt/FeatureRowBig.de6fa4f5.mjs').then((c) => c.default || c)),
+  FeatureRowSmall: defineAsyncComponent(() => import('./_nuxt/FeatureRowSmall.56b83c7a.mjs').then((c) => c.default || c)),
+  Grid: defineAsyncComponent(() => import('./_nuxt/Grid.0c98a1dd.mjs').then((c) => c.default || c)),
+  HistoryItem: defineAsyncComponent(() => import('./_nuxt/HistoryItem.604f68e9.mjs').then((c) => c.default || c)),
+  Introtext: defineAsyncComponent(() => import('./_nuxt/Introtext.70668019.mjs').then((c) => c.default || c)),
+  Keyvisual: defineAsyncComponent(() => import('./_nuxt/Keyvisual.99b5f4c1.mjs').then((c) => c.default || c)),
+  Page: defineAsyncComponent(() => import('./_nuxt/Page.9bb5c365.mjs').then((c) => c.default || c)),
+  PlayerItem: defineAsyncComponent(() => import('./_nuxt/PlayerItem.bca231c5.mjs').then((c) => c.default || c)),
+  Teaser: defineAsyncComponent(() => import('./_nuxt/Teaser.6f8a07b3.mjs').then((c) => c.default || c)),
+  HeaderMenu: defineAsyncComponent(() => import('./_nuxt/header_menu.bf022a7a.mjs').then((n) => n.h).then((c) => c.default || c))
 };
 const _nuxt_components_plugin_mjs_KR1HBZs4kY = defineNuxtPlugin((nuxtApp) => {
   for (const name in components) {
@@ -937,17 +945,6 @@ const metaMixin = {
 const node_modules_nuxt_dist_head_runtime_mixin_plugin_mjs_prWV5EzJWI = defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.mixin(metaMixin);
 });
-const _export_sfc = (sfc, props) => {
-  const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
-    target[key] = val;
-  }
-  return target;
-};
-const meta$8 = void 0;
-const meta$7 = void 0;
-const meta$6 = void 0;
-const meta$5 = void 0;
 var L = Object.defineProperty, z = Object.defineProperties, B = Object.getOwnPropertyDescriptors, b = Object.getOwnPropertySymbols, D = Object.prototype.hasOwnProperty, U = Object.prototype.propertyIsEnumerable, v = (o, t, e) => t in o ? L(o, t, { enumerable: true, configurable: true, writable: true, value: e }) : o[t] = e, h = (o, t) => {
   for (var e in t || (t = {}))
     D.call(t, e) && v(o, e, t[e]);
@@ -1543,6 +1540,19 @@ const rt = (o = {}) => {
       html: r
     };
   });
+}, lt = (o, t) => {
+  if (!m) {
+    console.error("Please initialize the Storyblok SDK before calling the renderRichText function");
+    return;
+  }
+  if (o === "")
+    return "";
+  if (!o)
+    return console.warn(`${o} is not a valid Richtext object. This might be because the value of the richtext field is empty.
+    
+  For more info about the richtext object check https://github.com/storyblok/storyblok-js#rendering-rich-text`), "";
+  let e = m;
+  return t && (e = new R(t.schema), t.resolver && E(e, t.resolver)), e.render(o);
 }, st = /* @__PURE__ */ defineComponent({
   __name: "StoryblokComponent",
   props: {
@@ -1570,101 +1580,90 @@ const ct = () => (g || S("useStoryblokApi"), g), ht = {
     g = e;
   }
 };
+const meta$6 = void 0;
+const meta$5 = void 0;
 const meta$4 = void 0;
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
 const meta$3 = void 0;
 const meta$2 = void 0;
 const meta$1 = void 0;
 const meta = void 0;
 const _routes = [
   {
+    name: "bookings",
+    path: "/bookings",
+    file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/bookings.vue",
+    children: [],
+    meta: meta$6,
+    alias: [],
+    redirect: void 0,
+    component: () => import('./_nuxt/bookings.da3cb986.mjs').then((m2) => m2.default || m2)
+  },
+  {
     name: "club",
     path: "/club",
     file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/club.vue",
     children: [],
-    meta: meta$8,
+    meta: meta$5,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/club.2c9ceae8.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/club.969b9d25.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "contact",
     path: "/contact",
     file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/contact.vue",
     children: [],
-    meta: meta$7,
+    meta: meta$4,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/contact.3dca2646.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/contact.bddd6aab.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "events",
     path: "/events",
     file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/events.vue",
     children: [],
-    meta: meta$6,
+    meta: meta$3,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/events.75107cf3.mjs').then((m2) => m2.default || m2)
-  },
-  {
-    name: "home",
-    path: "/home",
-    file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/home.vue",
-    children: [],
-    meta: meta$5,
-    alias: [],
-    redirect: void 0,
-    component: () => import('./_nuxt/home.d938a22c.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/events.e5e56fa5.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "index",
     path: "/",
     file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/index.vue",
     children: [],
-    meta: meta$4,
+    meta: meta$2,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index.9b9b2ba2.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.99a00f18.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "join-us",
     path: "/join-us",
     file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/join-us.vue",
     children: [],
-    meta: meta$3,
-    alias: [],
-    redirect: void 0,
-    component: () => import('./_nuxt/join-us.b2514f1a.mjs').then((m2) => m2.default || m2)
-  },
-  {
-    name: "player",
-    path: "/player",
-    file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/player.vue",
-    children: [],
-    meta: meta$2,
-    alias: [],
-    redirect: void 0,
-    component: () => import('./_nuxt/player.dddfabf4.mjs').then((m2) => m2.default || m2)
-  },
-  {
-    name: "sub1-teams",
-    path: "/sub1/teams",
-    file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/sub1/teams.vue",
-    children: [],
     meta: meta$1,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/teams.71ed5073.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/join-us.239a0425.mjs').then((m2) => m2.default || m2)
   },
   {
-    name: "teams",
-    path: "/teams",
-    file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/teams.vue",
+    name: "players",
+    path: "/players",
+    file: "/Users/tobi/Desktop/tobiaszimmer.dev/Kunden/002_tc-dueppenweiler/TCD-Website/pages/players.vue",
     children: [],
     meta,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/teams.a22ce3f0.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/players.468f514b.mjs').then((m2) => m2.default || m2)
   }
 ];
 const configRouterOptions = {};
@@ -1837,7 +1836,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.f11e7509.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.71cb403e.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());
@@ -2050,5 +2049,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { _export_sfc as _, useState as a, useHead as b, ct as c, __nuxt_component_0$1 as d, entry$1 as default, useNuxtApp as u };
+export { _export_sfc as _, __nuxt_component_0$1 as a, useState as b, ct as c, useHead as d, entry$1 as default, lt as l, useNuxtApp as u };
 //# sourceMappingURL=server.mjs.map

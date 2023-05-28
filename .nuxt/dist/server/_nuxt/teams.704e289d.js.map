@@ -1,1 +1,0 @@
-{"version":3,"file":"teams.704e289d.js","sources":["../../../../pages/sub1/teams.vue"],"sourcesContent":["<script setup>\nconst story = await useAsyncStoryblok('sub1/teams', { version: 'draft' })\n</script>\n\n<template>\n  <StoryblokComponent v-if=\"story\" :blok=\"story.content\" />\n</template>\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;AACA,UAAA;;;;;;;;;;;;;;;;;;;"}
