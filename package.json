@@ -16,22 +16,21 @@
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
-    "@nuxtjs/tailwindcss": "^6.1.1",
-    "@storyblok/nuxt": "^4.4.2",
-    "nuxt": "^3.0.0-rc.12",
-    "sass": "^1.56.0",
-    "sass-loader": "^13.1.0"
+    "@storyblok/nuxt": "^5.4.8",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@fortawesome/vue-fontawesome": "^3.0.2",
-    "@vueuse/core": "^9.4.0",
-    "axios": "^0.27.2",
-    "nuxt-cli": "nuxt/cli",
-    "storyblok-js-client": "^5.2.5",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@nuxt/kit": "^3.5.2",
+    "@vueuse/core": "^10.1.2",
+    "axios": "^1.4.0",
+    "nuxt": "3.5.2",
+    "storyblok-js-client": "^5.10.6",
     "vue-simple-drawer": "^1.0.6"
   }
 }
