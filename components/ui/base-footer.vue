@@ -27,44 +27,60 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-nav {
-    display: none;
+#footer {
+    nav {
+        display: none;
+    }
+
+    .subfooter {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+        .copyright {
+            color: $color-secondary;
+            margin: 0 auto; 
+        }
+
+        img {
+            grid-area: 1 / 1 / 3 / 2;
+            margin: 0 auto;
+        }
+    }
 }
 
-.copyright {
-    color: $color-secondary;
-}
 
 @include desktop {
 
-    .subfooter{
+    .subfooter {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding: 5% 0;
 
-        .copyright{
+        .copyright {
             display: flex;
             align-items: center;
             justify-content: center
         }
 
-        img{
+        img {
             height: 132px;
             width: 132px;
             margin: 0 auto;
         }
     }
+
     nav {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         width: 60vw;
         margin: 0 auto;
 
-        > div{
+        >div {
             display: flex;
             flex-direction: column;
 
-            > a{
+            >a {
                 display: flex;
                 justify-content: center;
             }
