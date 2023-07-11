@@ -6,3 +6,4 @@ node_modules
 .nuxt/*
 .localhost-key.pem
 .localhost.pem
+.DS_Store
