@@ -12,10 +12,9 @@
 
 	defineProps({ blok: Object })
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 * {
 	font-family: Fairplay, sans-serif;
-	;
 }
 
 section {

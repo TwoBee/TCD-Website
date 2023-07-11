@@ -2,7 +2,10 @@
     <section id="footer">
         <nav>
             <div>
-                <span class="copyright">Copyright 2022</span>
+                <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
+            </div>
+            <div>
+                <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
             </div>
             <div>
                 <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
@@ -11,35 +14,58 @@
                 <router-link :to="item.slug" v-for="item in data" :key="item">{{ item.display }}</router-link>
             </div>
         </nav>
+        <div class="subfooter">
+            <span class="copyright">Copyright 2022</span>
+            <img src="@/assets/img/logo.png" alt="">
+        </div>
     </section>
 </template>
 <script>
 
-    export default {
-        props: { 'data': Array },
-    }
+export default {
+    props: { 'data': Array },
+}
 </script>
 <style scoped lang="scss">
-nav{
+nav {
     display: none;
 }
-.copyright{
+
+.copyright {
     color: $color-secondary;
 }
-@include desktop {
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 20% 2rem 20%;
-        
 
-        >div {
+@include desktop {
+
+    .subfooter{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 5% 0;
+
+        .copyright{
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        img{
+            height: 132px;
+            width: 132px;
+            margin: 0 auto;
+        }
+    }
+    nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 60vw;
+        margin: 0 auto;
+
+        > div{
             display: flex;
             flex-direction: column;
 
-            &:first-of-type {
-                align-items: center;
+            > a{
+                display: flex;
                 justify-content: center;
             }
         }

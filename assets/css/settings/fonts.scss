@@ -31,54 +31,56 @@
 	font-family: Fairplay, sans-serif;
 	font-size: toRem(42);
 	font-weight: 500;
-	line-height: toRem(42);
+	line-height: toRem(58);
+	letter-spacing: -0.1rem;
 }
 
 @mixin font-headline-sans-2 {
     font-family: Gotham;
 	font-size: toRem(42);
 	font-weight: 500;
-	line-height: toRem(42);
+	line-height: toRem(58);
+	letter-spacing: -0.1rem;
 }
 
 @mixin font-headline-serif-3 {
 	font-family: Fairplay, sans-serif;
 	font-size: toRem(32);
 	font-weight: 300;
-	line-height: toRem(32);
+	line-height: toRem(64);
 }
 
 @mixin font-headline-sans-3 {
     font-family: Gotham;
 	font-size: toRem(32);
 	font-weight: 300;
-	line-height: toRem(32);
+	line-height: toRem(64);
 }
 
 @mixin font-body-serif-r {
 	font-family: Fairplay, sans-serif;
-	font-size: toRem(20);
+	font-size: toRem(16);
 	font-weight: normal;
-	line-height: toRem(32);
+	line-height: toRem(19);
 }
 
 @mixin font-body-sans-r {
     font-family: Gotham;
-	font-size: toRem(20);
+	font-size: toRem(16);
 	font-weight: normal;
-	line-height: toRem(32);
+	line-height: toRem(19);
 }
 
 @mixin font-body-serif-b {
     font-family: Fairplay, sans-serif;
-	font-size: toRem(20);
+	font-size: toRem(16);
 	font-weight: bold;
-	line-height: toRem(32);
+	line-height: toRem(19);
 }
 
 @mixin font-body-sans-b {
     font-family: Gotham;
-	font-size: toRem(20);
+	font-size: toRem(16);
 	font-weight: bold;
-	line-height: toRem(32);
+	line-height: toRem(19);
 }

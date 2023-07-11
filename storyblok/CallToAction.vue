@@ -18,16 +18,16 @@
 </template>
   
 <script setup>
-    import { useNow } from '@vueuse/core';
+import { useNow } from '@vueuse/core';
 
-    const props = defineProps({ blok: Object });
-    const goToLink = computed(() => {
-        return props.blok.Link.title ? props.blok.Link.title : props.blok.Link.cached_url;
-    })
-    const currentYear = useNow();
-    const currentYearString = "1970 /A " + currentYear.value.getFullYear()
-    const displayText = ref(currentYearString);
-    
+const props = defineProps({ blok: Object });
+const goToLink = computed(() => {
+    return props.blok.Link.title ? props.blok.Link.title : props.blok.Link.cached_url;
+})
+const currentYear = useNow();
+const currentYearString = "1970 /A " + currentYear.value.getFullYear()
+const displayText = ref(currentYearString);
+
 </script>
   
 

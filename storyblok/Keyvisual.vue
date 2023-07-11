@@ -50,7 +50,7 @@ h3 {
 }
 
 .keyvisual {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 212, 255, 0) 100%), v-bind('backgroundImage');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 212, 255, 0) 100%), v-bind('backgroundImage');
   background-position: v-bind('backgroundAlignment');
   background-repeat: no-repeat;
   background-size: cover;

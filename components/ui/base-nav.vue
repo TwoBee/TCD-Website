@@ -9,7 +9,7 @@
         <img src="@/assets/img/logo.png" alt="">
         <div class="navigation">
             <ul>
-                <li><a href="/players">Spieler</a></li>
+                <li><a href="/spieler">Spieler</a></li>
                 <li><a href="/club">Der Verein</a></li>
                 <li><a href="/events">Termine</a></li>
                 <li><a href="/bookings">Platzreservierung</a></li>
@@ -49,7 +49,7 @@
     }
 
     const mobileMenu = computed(() => {
-        return width.value <= 750 ? true : false;
+        return width.value <= 810 ? true : false;
     })
 </script>
 

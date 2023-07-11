@@ -2,5 +2,7 @@ node_modules
 
 # Local Netlify folder
 .netlify
-.output
-.nuxt
+.output/*
+.nuxt/*
+.localhost-key.pem
+.localhost.pem

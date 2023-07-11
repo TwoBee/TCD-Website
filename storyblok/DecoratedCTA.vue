@@ -21,6 +21,7 @@
 .decoratedCTA {
     background: linear-gradient(180deg, white 25%, $color-primary 25%);
 
+
     @include desktop{
         padding: 10rem 0;
     }
