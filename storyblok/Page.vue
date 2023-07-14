@@ -1,16 +1,31 @@
 <template>
 	<div v-editable="blok" class="">
-		<Nav></Nav>
+		<Navigation :items="headermenu" :logo="logo" />
 		<StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
-		<Footer></Footer>
+		<Footer :items="footermenu" />
 	</div>
 </template>
 
 <script setup>
-	import Footer from '../components/layout/footer.vue';
-	import Nav from '../components/layout/nav.vue';
+import Footer from '../components/organisms/footer.vue'
+import Navigation from '../components/organisms/Navigation.vue'
+defineProps({ blok: Object })
 
-	defineProps({ blok: Object })
+const storyblokApi = useStoryblokApi()
+const headermenu = ref([])
+const footermenu = ref([])
+const logo = ref('')
+
+const { data } = await storyblokApi.get('cdn/stories/config', {
+	version: 'draft',
+	resolve_links: 'url',
+})
+
+
+
+headermenu.value = data.story.content.header_menu
+footermenu.value = data.story.content.footer_menu
+logo.value = data.story.content.logo
 </script>
 <style lang="scss">
 * {

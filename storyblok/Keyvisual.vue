@@ -1,6 +1,5 @@
 <template>
   <section class="keyvisual" v-editable="blok">
-    <!-- <img :src="blok.image.filename" /> -->
     <div class="text__wrapper">
       <h2>{{ blok.headline }}</h2>
       <h3>{{ blok.subline }}</h3>

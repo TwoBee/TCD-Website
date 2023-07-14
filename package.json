@@ -15,8 +15,10 @@
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.13.2",
     "@nuxtjs/style-resources": "^1.2.1",
-    "@storyblok/nuxt": "^5.4.8",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@storyblok/nuxt": "5.4.8",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1"
   },
@@ -30,7 +32,7 @@
     "@vueuse/core": "^10.1.2",
     "axios": "^1.4.0",
     "nuxt": "3.5.2",
-    "storyblok-js-client": "^5.10.6",
+    "storyblok-js-client": "5.10.6",
     "vue-simple-drawer": "^1.0.6"
   }
 }

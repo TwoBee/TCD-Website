@@ -1,18 +1,21 @@
 <template>
     <nav class="mobile" v-if="mobileMenu">
-        <img src="@/assets/img/logo.png" alt="" />
+        <img :src="logo.filename" :alt="logo.alt" />
         <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
             <div class="middlebar"></div>
         </div>
     </nav>
     <nav v-if="!mobileMenu">
-        <img src="@/assets/img/logo.png" alt="">
+        <router-link to="/">
+            <img :src="logo.filename" :alt="logo.alt">
+        </router-link>
         <div class="navigation">
             <ul>
-                <li><a href="/spieler">Spieler</a></li>
-                <li><a href="/club">Der Verein</a></li>
-                <li><a href="/events">Termine</a></li>
-                <li><a href="/bookings">Platzreservierung</a></li>
+                <li v-for="item in items" :key="item._uid">
+                    <router-link :to="`/${item.link.story.slug}`">
+                        {{ item.link.story.name }}
+                    </router-link>
+                </li>
             </ul>
             <ul>
                 <li><a class="become-member" href="/join-us">Mitglied werden</a></li>
@@ -22,10 +25,11 @@
     <Transition name="menu">
         <div v-if="mobileNav" class="burgermenu_itemlist">
             <ul>
-                <li><a href="#">Spieler</a></li>
-                <li><a href="#">Der Verein</a></li>
-                <li><a href="#">Termine</a></li>
-                <li><a href="#">Platzreservierung</a></li>
+                <li v-for="item in items" :key="item._uid">
+                    <router-link :to="`/${item.link.story.slug}`">
+                        {{ item.link.story.name }}
+                    </router-link>
+                </li>
             </ul>
             <ul>
                 <li class="become-member">Mitglied werden</li>
@@ -35,22 +39,21 @@
 </template>
 
 <script setup>
-    import { computed, onMounted } from 'vue';
-    import { useWindowSize } from '@vueuse/core';
+import { computed } from 'vue';
+import { useWindowSize } from '@vueuse/core';
 
-    defineProps({ 'data': Array })
+const props = defineProps(['items', 'logo'])
 
+const mobileNav = ref(null);
+const { width } = useWindowSize();
+const mobileMenu = computed(() => {
+    return width.value <= 810 ? true : false;
+})
 
-    const mobileNav = ref(null)
-    const { width, height } = useWindowSize()
+const toggleMobile = () => {
+    mobileNav.value = !mobileNav.value;
+}
 
-    function toggleMobile() {
-        mobileNav.value = !mobileNav.value;
-    }
-
-    const mobileMenu = computed(() => {
-        return width.value <= 810 ? true : false;
-    })
 </script>
 
 <style scoped lang="scss">
@@ -96,8 +99,13 @@ nav {
     }
 }
 
-img {
+a {
     height: 100%;
+
+    img {
+        max-height: 142px;
+        height: 100%;
+    }
 }
 
 .mobile {

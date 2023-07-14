@@ -9,6 +9,12 @@
 	src: url("@/assets/fonts/Gotham/GothamLight.ttf");
 }
 
+@font-face {
+	font-family: Gotham-Bold;
+	src: url("@/assets/fonts/Gotham/Gotham-Black.otf");
+	src: url("@/assets/fonts/Gotham/GothamMedium.ttf");
+}
+
 @function toRem($val) {
 	@return calc($val / 16) + 0rem;
 }
@@ -72,15 +78,14 @@
 }
 
 @mixin font-body-serif-b {
-    font-family: Fairplay, sans-serif;
+    font-family: Fairplay-Bold, sans-serif;
 	font-size: toRem(16);
 	font-weight: bold;
 	line-height: toRem(19);
 }
 
 @mixin font-body-sans-b {
-    font-family: Gotham;
+    font-family: Gotham-Bold;
 	font-size: toRem(16);
-	font-weight: bold;
 	line-height: toRem(19);
 }

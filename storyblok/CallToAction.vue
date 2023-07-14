@@ -1,6 +1,6 @@
 <template>
-    <section ref="container" class="call-to-action" :style="{ '--bgContent': displayText }" v-editable="blok">
-        <div class="card">
+    <section ref="container" class="call-to-action"  :class="{mblock: offsetvalue === '0vh'}" :style="{ '--bgContent': displayText,' --offsetvar': offsetvalue }" v-editable="blok">
+        <div class="card" >
             <div class="textwrapper">
                 <h2>
                     {{ blok.Headline }}
@@ -28,10 +28,17 @@ const currentYear = useNow();
 const currentYearString = "1970 /A " + currentYear.value.getFullYear()
 const displayText = ref(currentYearString);
 
+const offsetvalue = computed(()=>{
+    return props.blok.Offset ? "-20vh": "0vh";
+})
 </script>
   
 
 <style scoped lang="scss">
+
+.mblock{
+    margin: 10vh 0;
+}
 .call-to-action {
     display: flex;
     justify-content: center;
@@ -73,7 +80,7 @@ const displayText = ref(currentYearString);
 
 @include desktop {
     section {
-        transform: translateX(20vw) translateY(-20vh);
+        transform: translateX(20vw) translateY(var(--offsetvar));
     }
 
     .call-to-action {

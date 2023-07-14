@@ -1,5 +1,5 @@
 <script setup>
-const story = await useAsyncStoryblok('sites/e', { version: 'draft' })
+const story = await useAsyncStoryblok('sites/termine', { version: 'draft', resolve_relations: 'Spielplan.mannschaften' })
 </script>
 
 <template>
@@ -7,7 +7,4 @@ const story = await useAsyncStoryblok('sites/e', { version: 'draft' })
 </template>
 
 <style scoped lang="scss">
-:deep(section){
-    padding-top: 20vh;
-}
 </style>

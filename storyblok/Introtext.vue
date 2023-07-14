@@ -27,9 +27,10 @@
     }
 
     div {
-        @include font-headline-serif-3;
-
-        margin: 3rem 0
+        @include font-body-serif-r;
+        font-size: 2rem;
+        line-height: 2.2rem;
+        margin: 3rem 0;
     }
 
     a {

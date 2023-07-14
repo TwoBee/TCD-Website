@@ -5,6 +5,9 @@ export default defineNuxtConfig({
 			"@storyblok/nuxt",
 			{
 				accessToken: process.env.STORYBLOK_TOKEN,
+				bridge: true,
+				devtools: true,
+				apiOptions: {},
 			},
 		],
 		"@nuxtjs/tailwindcss",

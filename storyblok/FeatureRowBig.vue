@@ -19,8 +19,6 @@
 
 <script setup>
     const props = defineProps({ blok: Object });
-    console.log("URL");
-    console.log(props.blok.right_link);
     const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
     const backgroundImage = ref("url(" +
         props.blok.image.filename +
