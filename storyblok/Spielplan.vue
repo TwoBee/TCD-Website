@@ -34,7 +34,7 @@ section {
   padding-bottom: 10%;
 
   @include desktop {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   article {
