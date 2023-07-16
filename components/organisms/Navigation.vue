@@ -18,7 +18,7 @@
                 </li>
             </ul>
             <ul>
-                <li><a class="become-member" href="/join-us">Mitglied werden</a></li>
+                <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
             </ul>
         </div>
     </nav>
@@ -32,7 +32,7 @@
                 </li>
             </ul>
             <ul>
-                <li class="become-member">Mitglied werden</li>
+                <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
             </ul>
         </div>
     </Transition>

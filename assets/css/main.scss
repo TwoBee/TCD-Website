@@ -2,6 +2,10 @@
 @import "./settings/fonts.scss";
 @import "./settings/mixins.scss";
 
+html{
+	line-height: unset;
+}
+
 a {
 	color: $color-white;
 	transition: color 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75),
