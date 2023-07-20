@@ -58,7 +58,8 @@ h3 {
   height: 50vh;
 
   @include desktop {
-    height: calc(100vh - 8vw);
+    min-height: 50vh;
+    height: 600px;
   }
 
   .text__wrapper {
