@@ -2,41 +2,50 @@
     <section id="footer">
         <nav>
             <div>
-                <p>String</p>
-                <p>String</p>
-                <p>String</p>
-                <p>String</p>
-            </div>
-            <div>
-                <router-link :to="`/${blok.link.url}`" v-for="blok in items" :key="blok._uid">{{ blok.link.story.name
+                <router-link :to="`/${blok.link.story.slug}`" v-for="blok in footer_start" :key="blok._uid">{{
+                    blok.link.story.name
                 }}</router-link>
             </div>
             <div>
-                <p>String</p>
-                <p>String</p>
-                <p>String</p>
-                <p>String</p>
+                <router-link :to="`/${blok.link.story.slug}`" v-for="blok in footer_middle" :key="blok._uid">{{
+                    blok.link.story.name
+                }}</router-link>
             </div>
             <div>
-                <p>String</p>
-                <p>String</p>
-                <p>String</p>
-                <p>String</p>
+                <router-link :to="`/${blok.link.story.slug}`" v-for="blok in footer_end" :key="blok._uid">{{
+                    blok.link.story.name
+                }}</router-link>
+            </div>
+            <div>
+                <a :href="blok.Link.url" v-for="blok in socials" target="_blank" :key="blok._uid">
+                    <span :key="blok._uid">{{ blok.Link.title }}</span>
+                    <font-awesome-icon :icon="['fab', blok.Icon]" :key="blok._uid" size="xl" />
+                </a>
             </div>
         </nav>
         <div class="subfooter">
             <span class="copyright">Copyright 2022</span>
-            <img src="@/assets/img/logo.png" alt="">
+            <img :src="logo.filename" :alt="logo.alt">
         </div>
     </section>
 </template>
 <script setup>
-const props = defineProps(['items'])
+const storyblokApi = useStoryblokApi()
+const props = defineProps(['footer_start', 'footer_middle', 'footer_end', 'socials', 'logo'])
+
+const { data } = await storyblokApi.get('cdn/stories', {
+  version: 'draft',
+  is_startpage: false,
+  starts_with: 'config',
+  resolve_relations: 'Social.socials'
+})
 </script>
 <style scoped lang="scss">
 #footer {
+
     nav {
         display: none;
+
     }
 
     .subfooter {
@@ -61,11 +70,31 @@ const props = defineProps(['items'])
     #footer {
         nav {
             display: block;
+
+            div {
+                &:nth-of-type(4) {
+                    a {
+                        display: grid;
+                        grid-template-columns: 1fr; 
+                        gap: 5px;
+
+                        :first-child {
+                            grid-area: 1 / 2 / 2 / 3;
+                        }
+
+                        :last-child {
+                            grid-area: 1 / 1 / 2 / 2;
+                            justify-self: right;
+                            align-self: baseline;
+                        }
+                    }
+                }
+            }
         }
 
         .subfooter {
             display: flex;
-            
+
             .copyright {
                 display: flex;
                 align-items: center;
@@ -97,10 +126,10 @@ const props = defineProps(['items'])
             }
 
             a:any-link {
-                color: $color_grey_light;
+                @include font-body-serif-r;
+                color: $color-primary;
                 padding: 1rem 0;
             }
         }
     }
-}
-</style>
+}</style>
