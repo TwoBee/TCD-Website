@@ -1,6 +1,6 @@
 <script setup>
 
-const story = await useAsyncStoryblok('sites/', { version: 'draft' })
+const story = await useAsyncStoryblok('sites/', { version: 'draft', resolve_links: 'url' })
 </script>
 
 <template>

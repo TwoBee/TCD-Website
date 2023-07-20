@@ -19,6 +19,8 @@ declare module 'nuxt/schema' {
    storyblok: {
       accessToken: string,
 
+      enableSudoMode: boolean,
+
       usePlugin: boolean,
 
       bridge: boolean,

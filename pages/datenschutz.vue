@@ -1,6 +1,5 @@
 <script setup>
-
-const story = await useAsyncStoryblok('sites/mitglied-werden', { version: 'draft' })
+const story = await useAsyncStoryblok('sites/datenschutz', { version: 'draft', resolve_links: 'url' })
 </script>
 
 <template>

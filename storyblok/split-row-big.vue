@@ -33,6 +33,7 @@
 
     @include desktop {
         flex-direction: row;
+        height: 600px;
     }
 
     a {
@@ -48,7 +49,7 @@
                 display: flex;
                 justify-content: flex-end;
                 align-items: baseline;
-                height: 60vh;
+                height: 75%;
                 width: 100%;
                 overflow: hidden;
                 transition: all .7s ease;
@@ -91,7 +92,7 @@
 
             @include desktop {
                 max-width: 40%;
-                height: 80vh;
+                height: 100%;
             }
 
             h2 {

@@ -1,5 +1,5 @@
 <script setup>
-const story = await useAsyncStoryblok('sites/termine', { version: 'draft', resolve_relations: 'Spielplan.mannschaften' })
+const story = await useAsyncStoryblok('sites/termine', { version: 'draft' })
 </script>
 
 <template>

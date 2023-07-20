@@ -1,11 +1,11 @@
 <template>
     <section class="featureRow" v-editable="blok">
         <!-- <img :src="blok.image.filename" /> -->
-        <a class="left" href="/events">
+        <a class="left" :href="'/' + props.blok.left_link.story.slug">
             <h3>{{ blok.left_headline }}</h3>
             <h2>{{ blok.left_subline }}</h2>
         </a>
-        <a class="right" :href="blok.right_link.cached_url">
+        <a class="right" :href="rightLink">
             <div class="feature">
             </div>
             <div class="textwrapper">
@@ -18,12 +18,13 @@
 </template>
 
 <script setup>
-    const props = defineProps({ blok: Object });
+const props = defineProps({ blok: Object });
+const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
+const backgroundImage = ref("url(" +
+    props.blok.image.filename +
+    ")");
 
-    const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
-    const backgroundImage = ref("url(" +
-        props.blok.image.filename +
-        ")");
+    const rightLink = props.blok.right_link.story ? '/' + props.blok.right_link.story.slug : props.blok.right_link.url
 </script>
 
 <style scoped lang="scss">
@@ -34,7 +35,7 @@
 
     @include desktop {
         flex-direction: row;
-        height: 200px;
+        height: 250px;
     }
 
     a {

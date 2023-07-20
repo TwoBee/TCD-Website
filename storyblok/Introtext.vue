@@ -2,13 +2,13 @@
     <section class="Introtext" v-editable="blok">
         <h1>{{ props.blok.headline }}</h1>
         <div v-html="text"></div>
-        <a :href="url" target="_self">Linktext</a>
+        <a :href="url" target="_self">{{label}}</a>
     </section>
 </template>
 <script setup>
     const props = defineProps({ blok: Object });
     const text = computed(() => renderRichText(props.blok.text));
-    const url = useLinkhandling(props.blok.link);
+    const {url, label} = useLinkhandling(props.blok.link);
 </script>
 <style scoped lang="scss">
 .Introtext {
