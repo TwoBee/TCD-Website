@@ -94,7 +94,7 @@ const { data } = await storyblokApi.get('cdn/stories', {
 
         .subfooter {
             display: flex;
-
+            padding: 0 10%;
             .copyright {
                 display: flex;
                 align-items: center;
