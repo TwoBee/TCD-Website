@@ -1,41 +1,44 @@
 <template>
-    <nav class="mobile" v-if="mobileMenu">
-        <img :src="logo.filename" :alt="logo.alt" />
-        <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
-            <div class="middlebar"></div>
-        </div>
-    </nav>
-    <nav v-if="!mobileMenu">
-        <router-link to="/">
-            <img :src="logo.filename" :alt="logo.alt">
-        </router-link>
-        <div class="navigation">
-            <ul>
-                <li v-for="item in items" :key="item._uid">
-                    <router-link :to="`/${item.link.story.slug}`">
-                        {{ item.link.story.name }}
-                    </router-link>
-                </li>
-            </ul>
-            <ul>
-                <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
-            </ul>
-        </div>
-    </nav>
-    <Transition name="menu">
-        <div v-if="mobileNav" class="burgermenu_itemlist">
-            <ul>
-                <li v-for="item in items" :key="item._uid">
-                    <router-link :to="`/${item.link.story.slug}`">
-                        {{ item.link.story.name }}
-                    </router-link>
-                </li>
-            </ul>
-            <ul>
-                <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
-            </ul>
-        </div>
-    </Transition>
+    <ClientOnly>
+        <nav class="mobile" v-if="mobileMenu">
+            <img :src="logo.filename" :alt="logo.alt" />
+            <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
+                <div class="middlebar"></div>
+            </div>
+        </nav>
+        <nav v-if="!mobileMenu">
+            <router-link to="/">
+                <img :src="logo.filename" :alt="logo.alt">
+            </router-link>
+            <div class="navigation">
+                <ul>
+                    <li v-for="item in items" :key="item._uid">
+                        <router-link :to="`/${item.link.story.slug}`">
+                            {{ item.link.story.name }}
+                        </router-link>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
+                </ul>
+            </div>
+        </nav>
+        <Transition name="menu">
+            <div v-if="mobileNav" class="burgermenu_itemlist">
+                <ul>
+                    <li v-for="item in items" :key="item._uid">
+                        <router-link :to="`/${item.link.story.slug}`">
+                            {{ item.link.story.name }}
+                        </router-link>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
+                </ul>
+            </div>
+        </Transition>
+
+    </ClientOnly>
 </template>
 
 <script setup>
