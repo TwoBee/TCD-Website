@@ -7,15 +7,15 @@
             </div>
         </nav>
         <nav v-if="!mobileMenu">
-            <router-link to="/">
+            <NuxtLink to="/">
                 <img :src="logo.filename" :alt="logo.alt">
-            </router-link>
+            </NuxtLink>
             <div class="navigation">
                 <ul>
                     <li v-for="item in items" :key="item._uid">
-                        <router-link :to="`/${item.link.story.slug}`">
+                        <NuxtLink :to="`${item.link.story.url}`">
                             {{ item.link.story.name }}
-                        </router-link>
+                        </NuxtLink>
                     </li>
                 </ul>
                 <ul>
@@ -27,9 +27,9 @@
             <div v-if="mobileNav" class="burgermenu_itemlist">
                 <ul>
                     <li v-for="item in items" :key="item._uid">
-                        <router-link :to="`/${item.link.story.slug}`">
+                        <NuxtLink :to="`/${item.link.story.url}`">
                             {{ item.link.story.name }}
-                        </router-link>
+                        </NuxtLink>
                     </li>
                 </ul>
                 <ul>

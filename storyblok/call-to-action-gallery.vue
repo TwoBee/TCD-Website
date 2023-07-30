@@ -8,21 +8,20 @@
             </div>
             <div class="cta">
                 <p>{{ props.blok.Shorttext }}</p>
-                <a :href="url">Mehr erfahren</a>
+                <NuxtLink :to="props.blok.Link.story.url">Mehr erfahren</NuxtLink>
             </div>
         </div>
     </section>
 </template>
 <script setup>
-    const props = defineProps({ blok: Object });
-    const { url } = useLinkhandling(props.blok.Link)
+const props = defineProps({ blok: Object });
 </script>
 <style scoped lang="scss">
 .decoratedCTA {
     background: linear-gradient(180deg, white 25%, $color-primary 25%);
 
 
-    @include desktop{
+    @include desktop {
         padding: 10rem 0;
     }
 
@@ -30,7 +29,7 @@
         margin: 0 auto;
         width: 90%;
 
-        @include desktop{
+        @include desktop {
             width: 70%;
         }
 
@@ -43,7 +42,7 @@
             height: 350pxpx;
             overflow: hidden;
 
-            @include desktop{
+            @include desktop {
                 height: 900px;
             }
 
@@ -75,7 +74,7 @@
             color: $color_white;
             transform: translateY(-50%);
 
-            @include desktop{
+            @include desktop {
                 width: 50%;
             }
 
@@ -86,6 +85,11 @@
 
             a {
                 @include font-body-sans-b;
+                display: inline-block;
+
+                &:hover {
+                    color: $color_primary
+                }
             }
         }
     }

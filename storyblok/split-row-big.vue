@@ -1,11 +1,10 @@
 <template>
     <section class="featureRow big" v-editable="blok">
-        <!-- <img :src="blok.image.filename" /> -->
-        <a class="left" href="/club">
+        <NuxtLink class="left" to="/club">
             <h3>{{ blok.left_headline }}</h3>
             <h2>{{ blok.left_subline }}</h2>
-        </a>
-        <a class="right" :href="blok.right_link.cached_url">
+        </NuxtLink>
+        <NuxtLink class="right" :to="blok.right_link.story.url">
             <div class="feature">
             </div>
             <div class="textwrapper">
@@ -13,16 +12,16 @@
                 <h2>{{ blok.right_headline }}</h2>
 
             </div>
-        </a>
+        </NuxtLink>
     </section>
 </template>
 
 <script setup>
-    const props = defineProps({ blok: Object });
-    const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
-    const backgroundImage = ref("url(" +
-        props.blok.image.filename +
-        ")");
+const props = defineProps({ blok: Object });
+const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
+const backgroundImage = ref("url(" +
+    props.blok.image.filename +
+    ")");
 </script>
 
 <style scoped lang="scss">

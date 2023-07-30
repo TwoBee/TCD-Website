@@ -22,7 +22,6 @@ const logo = ref('')
 const { data } = await storyblokApi.get('cdn/stories/config', {
 	version: 'draft',
 	resolve_links: 'url',
-	resolve_relations: ''
 })
 headermenu.value = data.story.content.header_menu
 footerstart.value = data.story.content.footer_row_start

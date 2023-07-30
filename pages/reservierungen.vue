@@ -1,5 +1,5 @@
 <script setup>
-const story = await useAsyncStoryblok('sites/reservierungen', { version: 'draft' })
+const story = await useAsyncStoryblok('sites/reservierungen', { version: 'draft',  resolve_links: 'url' })
 </script>
 
 <template>

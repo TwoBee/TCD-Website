@@ -2,19 +2,19 @@
     <section id="footer">
         <nav>
             <div>
-                <router-link :to="`/${blok.link.story.slug}`" v-for="blok in footer_start" :key="blok._uid">{{
+                <NuxtLink :to="`/${blok.link.story.url}`" v-for="blok in footer_start" :key="blok._uid">{{
                     blok.link.story.name
-                }}</router-link>
+                }}</NuxtLink>
             </div>
             <div>
-                <router-link :to="`/${blok.link.story.slug}`" v-for="blok in footer_middle" :key="blok._uid">{{
+                <NuxtLink :to="`/${blok.link.story.url}`" v-for="blok in footer_middle" :key="blok._uid">{{
                     blok.link.story.name
-                }}</router-link>
+                }}</NuxtLink>
             </div>
             <div>
-                <router-link :to="`/${blok.link.story.slug}`" v-for="blok in footer_end" :key="blok._uid">{{
+                <NuxtLink :to="`/${blok.link.story.url}`" v-for="blok in footer_end" :key="blok._uid">{{
                     blok.link.story.name
-                }}</router-link>
+                }}</NuxtLink>
             </div>
             <div>
                 <a :href="blok.Link.url" v-for="blok in socials" target="_blank" :key="blok._uid">
@@ -34,10 +34,10 @@ const storyblokApi = useStoryblokApi()
 const props = defineProps(['footer_start', 'footer_middle', 'footer_end', 'socials', 'logo'])
 
 const { data } = await storyblokApi.get('cdn/stories', {
-  version: 'draft',
-  is_startpage: false,
-  starts_with: 'config',
-  resolve_relations: 'Social.socials'
+    version: 'draft',
+    is_startpage: false,
+    starts_with: 'config',
+    resolve_relations: 'Social.socials'
 })
 </script>
 <style scoped lang="scss">
@@ -75,7 +75,7 @@ const { data } = await storyblokApi.get('cdn/stories', {
                 &:nth-of-type(4) {
                     a {
                         display: grid;
-                        grid-template-columns: 1fr; 
+                        grid-template-columns: 1fr;
                         gap: 5px;
 
                         :first-child {
@@ -95,6 +95,7 @@ const { data } = await storyblokApi.get('cdn/stories', {
         .subfooter {
             display: flex;
             padding: 0 10%;
+
             .copyright {
                 display: flex;
                 align-items: center;
@@ -132,4 +133,5 @@ const { data } = await storyblokApi.get('cdn/stories', {
             }
         }
     }
-}</style>
+}
+</style>
