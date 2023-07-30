@@ -1,11 +1,13 @@
 <template>
     <ClientOnly>
-        <nav class="mobile" v-if="mobileMenu">
-            <img :src="logo.filename" :alt="logo.alt" />
-            <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
-                <div class="middlebar"></div>
-            </div>
-        </nav>
+        <NuxtLink to="/">
+            <nav class="mobile" v-if="mobileMenu">
+                <img :src="logo.filename" :alt="logo.alt" />
+                <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
+                    <div class="middlebar"></div>
+                </div>
+            </nav>
+        </NuxtLink>
         <nav v-if="!mobileMenu">
             <NuxtLink to="/">
                 <img :src="logo.filename" :alt="logo.alt">
