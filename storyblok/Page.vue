@@ -1,8 +1,9 @@
 <template>
 	<div v-editable="blok" class="">
-		<Navigation :items="headermenu" :logo="logo" />
+		<Navigation :left_items="headermenu" :right_items="headermenu_right" :logo="logo" />
 		<StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
-		<Footer :logo="logo" :footer_start="footerstart" :footer_middle="footermiddle" :footer_end="footerend" :socials="footersocial" />
+		<Footer :logo="logo" :footer_start="footerstart" :footer_middle="footermiddle" :footer_end="footerend"
+			:socials="footersocial" />
 	</div>
 </template>
 
@@ -13,6 +14,7 @@ defineProps({ blok: Object })
 
 const storyblokApi = useStoryblokApi()
 const headermenu = ref([])
+const headermenu_right = ref([])
 const footermiddle = ref([])
 const footerstart = ref([])
 const footerend = ref([])
@@ -24,6 +26,7 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 	resolve_links: 'url',
 })
 headermenu.value = data.story.content.header_menu
+headermenu_right.value = data.story.content.right_header_menu
 footerstart.value = data.story.content.footer_row_start
 footermiddle.value = data.story.content.footer_row_middle
 footerend.value = data.story.content.footer_row_end

@@ -45,6 +45,7 @@ export default defineNuxtConfig({
 		},
 	},
 	build: {
+		watch: ["/components/*"],
 		transpile: ['@fortawesome/vue-fontawesome']
 	},
 	formkit: {

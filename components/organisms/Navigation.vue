@@ -1,53 +1,51 @@
 <template>
-    <ClientOnly>
+    <nav class="mobile" v-if="mobileMenu">
+        <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
+            <div class="middlebar"></div>
+        </div>
+    </nav>
+    <nav v-if="!mobileMenu">
         <NuxtLink to="/">
-            <nav class="mobile" v-if="mobileMenu">
-                <img :src="logo.filename" :alt="logo.alt" />
-                <div class="topbottombar" :class="{ active: mobileNav }" @click="toggleMobile">
-                    <div class="middlebar"></div>
-                </div>
-            </nav>
+            <img :src="logo.filename" :alt="logo.alt">
         </NuxtLink>
-        <nav v-if="!mobileMenu">
+        <div class="navigation">
+            <ul>
+                <li v-for="item in left_items" :key="item._uid">
+                    <NuxtLink :to="`${item.link.story.url}`">
+                        {{ item.link.story.name }}
+                    </NuxtLink>
+                </li>
+            </ul>
+            <ul>
+                <li v-for="item in right_items" :key="item._uid">
+                    <NuxtLink class="highlighted" :to="`/${item.link.story.url}`">
+                        {{ item.link.story.name }}
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <Transition name="menu">
+        <div v-if="mobileNav" class="burgermenu_itemlist">
             <NuxtLink to="/">
-                <img :src="logo.filename" :alt="logo.alt">
+                <img :src="logo.filename" :alt="logo.alt" />
             </NuxtLink>
-            <div class="navigation">
-                <ul>
-                    <li v-for="item in items" :key="item._uid">
-                        <NuxtLink :to="`${item.link.story.url}`">
-                            {{ item.link.story.name }}
-                        </NuxtLink>
-                    </li>
-                </ul>
-                <ul>
-                    <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
-                </ul>
-            </div>
-        </nav>
-        <Transition name="menu">
-            <div v-if="mobileNav" class="burgermenu_itemlist">
-                <ul>
-                    <li v-for="item in items" :key="item._uid">
-                        <NuxtLink :to="`/${item.link.story.url}`">
-                            {{ item.link.story.name }}
-                        </NuxtLink>
-                    </li>
-                </ul>
-                <ul>
-                    <li><a class="become-member" href="/mitglied-werden">Mitglied werden</a></li>
-                </ul>
-            </div>
-        </Transition>
-
-    </ClientOnly>
+            <ul>
+                <li v-for="item in [...left_items, ...right_items]" :key="item._uid">
+                    <NuxtLink :to="`/${item.link.story.url}`">
+                        {{ item.link.story.name }}
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
+    </Transition>
 </template>
 
 <script setup>
 import { computed } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 
-const props = defineProps(['items', 'logo'])
+const props = defineProps(['left_items', 'right_items', 'logo'])
 
 const mobileNav = ref(null);
 const { width } = useWindowSize();
@@ -57,7 +55,7 @@ const mobileMenu = computed(() => {
 
 const toggleMobile = () => {
     mobileNav.value = !mobileNav.value;
-}
+};
 
 </script>
 
@@ -96,22 +94,25 @@ nav {
                 width: fit-content;
                 display: block;
 
-                &.become-member {
+                &.highlighted {
                     color: $color-secondary
                 }
             }
         }
+
     }
-}
 
-a {
-    height: 100%;
-
-    img {
-        max-height: 142px;
+    a {
         height: 100%;
+
+        img {
+            max-height: 142px;
+            height: 100%;
+        }
     }
 }
+
+
 
 .mobile {
     position: fixed;
@@ -176,9 +177,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     li {
         padding: 1rem;
+        @include font-headline-serif-2;
 
         a {
             color: $color-primary;
@@ -187,6 +190,10 @@ a {
         &:hover {
             color: $color-secondary;
         }
+    }
+
+    img {
+        height: unset;
     }
 }
 

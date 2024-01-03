@@ -1,22 +1,22 @@
+<script setup>
+const props = defineProps({ blok: Object });
+const backgroundImage = ref("url(" +
+  props.blok.image.filename +
+  ")");
+const greyscale = props.blok.greyscale ? 'grayscale(.5)' : 'grayscale(0)';
+const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
+const filter = ref(greyscale);
+
+</script>
+
 <template>
-  <section class="keyvisual" v-editable="blok">
+  <section class="container" v-editable="blok">
     <div class="text__wrapper">
       <h2>{{ blok.headline }}</h2>
       <h3>{{ blok.subline }}</h3>
     </div>
   </section>
 </template>
-
-<script setup>
-  const props = defineProps({ blok: Object });
-  const backgroundImage = ref("url(" +
-    props.blok.image.filename +
-    ")");
-  const greyscale = props.blok.greyscale ? 'grayscale(.5)' : 'grayscale(0)';
-  const backgroundAlignment = props.blok.alignment ? props.blok.alignment : 'center';
-  const filter = ref(greyscale);
-
-</script>
 
 <style scoped lang="scss">
 img {
@@ -48,7 +48,7 @@ h3 {
   }
 }
 
-.keyvisual {
+.container {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 212, 255, 0) 100%), v-bind('backgroundImage');
   background-position: v-bind('backgroundAlignment');
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@ h3 {
     display: flex;
     flex-direction: column;
 
-    @include desktop{
+    @include desktop {
       top: 60%;
     }
   }
